@@ -1,0 +1,1 @@
+// Instead of writing that logic inside every controller, you make a utility file.
