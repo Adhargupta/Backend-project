@@ -2,6 +2,9 @@ import express from 'express'
 
 const app = express()
 
+// ************************************************************************************************ //
+
+// Importing cors
 
 import cors from 'cors'     // This allow us to make request from frontend to backend
 app.use(cors(
@@ -14,9 +17,20 @@ app.use(express.json({limit: '16kb'}))     // This is used to parse the incoming
 app.use(express.urlencoded())               // This is used when user goes for different browser then different url generates 
 app.use(express.static("public"))     // This is used to serve static files from the "public" directory (like images, css files, js files etc.)
 
+// ***************************************************************************************************** //
+
+// Importing cookies
 
 import cookieParser from 'cookie-parser'
 app.use(cookieParser())     // This is used to parse the cookies from the incoming request and make it available in req.cookies (if we don't use this we can't access req.cookies in our routes)
+
+// ******************************************************************************************************** //
+
+import userRouter from './routes/user.routes.js'
+
+app.use("/api/v1/users",userRouter)                        // we are not using app.get (as we were doing) cause while dealing with this we will use controllers for that
+
+
 
 export default app 
 // export {app}     // This work same as above

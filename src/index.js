@@ -47,6 +47,8 @@
     // require("dotenv").config({path:'./env'});                    // this cause incosistancey so we use import
     import dotenv from "dotenv";                        
     import connectDB from './db/index.js';
+    import app from "./app.js";
+    
     dotenv.config(      // to write import dotenv we have to use it + also you have to change something in package.json
         {
             path:'./env'
