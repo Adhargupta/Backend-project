@@ -53,7 +53,7 @@ userSchema.pre("save",async function (next){
 // function is used cause we need to access "this" keyword which is not possible in arrow function
 // next is used to move next middleware
     if(this.isModified("password")){                                              // this is used to check if password is modified (modified is in built) or not
-        this.password = bcrypt.hash(this.password, 10)              // firstly we are encrypting the password before saving to db and 10 is the rounds of hashing
+        this.password = await bcrypt.hash(this.password, 10)              // firstly we are encrypting the password before saving to db and 10 is the rounds of hashing
         next()                                                          // this is used to move to next middleware
     }
 })
