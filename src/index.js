@@ -1,8 +1,8 @@
 // ********************************************************************************************* //
-// import mongoose from 'mongoose'
+// import mongoose from 'mongoose'                                      // Tp connect DB
 // import { DB_NAME } from './constants';
 
-// import express from 'express'
+// import express from 'express'                            // previously
 // const app = express()
 
 
@@ -22,7 +22,7 @@
 
     //         await mongoose.connect(`${process.env.MONGODB_URL}/${DB_NAME}`)                         // Caling data from DB might result some time so we use await
 
-    //         app.on("error",()=>{                // Used for error listening (the database connection error ussually)
+    //         app.on("error",()=>{                    // Used for error listening (after database connection error like wrong password etc)
     //             console.log("Error :", error);
     //             throw error
     //         })
@@ -51,7 +51,7 @@
     
     dotenv.config(      // to write import dotenv we have to use it + also you have to change something in package.json
         {
-            path:'./env'
+            path:'./.env'
         }
     )
     connectDB()

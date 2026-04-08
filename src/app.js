@@ -26,6 +26,8 @@ app.use(cookieParser())     // This is used to parse the cookies from the incomi
 
 // ******************************************************************************************************** //
 
+// Connecting Routers
+
 import userRouter from './routes/user.routes.js'
 
 app.use("/api/v1/users",userRouter)                        // we are not using app.get (as we were doing) cause while dealing with this we will use controllers for that
